@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lstsail}[2023/05/18 Listings language definition for the Sail architecture definition language]
+
+\RequirePackage{listings}
+
+% Source: https://github.com/rems-project/sail/blob/c5b9e8e6084e5cbf15cf9e0a07cad14c62ade588/doc/manual.tex
+\lstdefinelanguage{Sail}
+{
+    alsodigit={0x}, % hex numbers are numbers too!
+    morekeywords=
+    {
+        val,function,mapping,cast,type,forall,overload,operator,enum,union,undefined,exit,and,assert,sizeof,
+        scattered,register,inc,dec,if,then,else,effect,let,as,@,in,end,Type,Int,Order,match,clause,struct,
+        foreach,from,to,by,infix,infixl,infixr,bitfield,default,try,catch,throw,constraint,monadic
+    },
+    morecomment=[l]{//},        % mark // as line comment start
+    morecomment=[s]{/*}{*/},    % mark /*, */ as block comment begin, end
+    morestring=[b]",            % mark " as string start/end
+    deletestring=[bd]',         % dont mark ' as string start/end
+    literate={\{|}{{$\{|$}}1 {|\}}{{$|\}$}}1
+}

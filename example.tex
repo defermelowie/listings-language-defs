@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+
+% -- Packages --------------------------------------------------
+
+\usepackage[utf8]{inputenc}          % This file is UTF-8 encoded
+\usepackage[english]{babel}          % Set language to english
+\usepackage[hidelinks]{hyperref}     % Clickable titles in document
+\usepackage{xcolor}                  % Use named colors
+
+\usepackage{listings}                % Code blocks
+\usepackage[T1]{fontenc}             % Use 8-bit fonts
+\usepackage{noto}                    % For noto mono in code
+
+\usepackage{ldef/lstriscv}
+\usepackage{ldef/lstsail}
+\usepackage{ldef/lstrust}
+
+
+% -- Preamble --------------------------------------------------
+
+\lstset{
+    commentstyle=\color{gray}, % Grey-out comments since noto mono doesn't support italics
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    numbers=left,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+    basicstyle=\footnotesize\notomono,
+    captionpos=b,
+    float=htb,
+    frame=single,
+}
+
+% -- Main document ---------------------------------------------
+
+\begin{document}
+
+\lstlistoflistings
+
+\section{RISC-V}
+RISC-V is an Instruction Set Architecture. Listing~\ref{lst:riscv} demonstrates syntax highlighting for its GNU assembly language.
+\lstinputlisting[language={[riscv]Assembly}, style=riscv, label={lst:riscv}, caption={RISC-V example}]{res/mret_M_to_VU.S}
+
+\clearpage
+\section{Sail}
+Sail is a domain specific language for expressing ISA semantics.
+\lstinputlisting[language={Sail}, caption={Sail example}]{res/virt_instr_exception.sail}
+
+\clearpage
+\section{Rust}
+Rust is a general purpose language which focuses on a combination of safety and speed.
+\lstinputlisting[language={Rust}, caption={Rust example}]{res/couter_peripheral.rs}
+
+\end{document}
