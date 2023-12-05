@@ -1,6 +1,6 @@
 # Lowie's Latex Listings Languages
 
-This repository contains some language definitions for the Latex Listings package. It's by no means elegant of complete and simply contains whatever I wrote when I needed support for a certain language.
+This repository contains some language definitions for the Latex Listings package. It's by no means elegant or complete and simply contains whatever I wrote when I needed support for a certain language.
 
 ## Outline
 
